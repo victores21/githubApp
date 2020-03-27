@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+2&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Baloo 2", cursive;
+}
+.container_user {
+  display: grid;
+  grid-template-areas: "top_container";
+  grid-template-rows: 250px;
+  height: 100vh;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgb(26, 30, 34);
+
+  .top_container {
+    display: grid;
+    grid-template-areas:
+      "user_avatar"
+      "username"
+      "url"
+      "user_info"
+      "account_details";
+    grid-area: top_container;
+    color: #fff;
+    text-align: center;
+
+    .user_avatar {
+      margin-top: 5rem;
+      grid-area: user_avatar;
+      justify-content: center;
+      img {
+        border-radius: 100%;
+        height: 9rem;
+        width: 9rem;
+        border: 0.5rem rgb(0, 112, 243) solid;
+      }
+    }
+    .username {
+      grid-area: username;
+      margin-top: 1rem;
+    }
+    .url {
+      grid-area: url;
+      a {
+        font-size: 30px;
+      }
+    }
+    .user_info {
+      grid-area: user_info;
+      margin-top: 1rem;
+      p {
+        font-size: 17px;
+      }
+      i {
+        padding-right: 0.5rem;
+      }
+    }
+    .account_details {
+      grid-area: account_details;
+      display: grid;
+      grid-template-areas: "repositories followers following";
+      grid-gap: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 3rem;
+
+      .details_rep {
+        background: rgb(36, 41, 46);
+        padding: 0.5rem;
+      }
+      .repositories {
+        grid-area: repositories;
+      }
+      .followers {
+        grid-area: followers;
+        background: rgb(36, 41, 46);
+      }
+      .following {
+        grid-area: following;
+        background: rgb(36, 41, 46);
+      }
+    }
+  }
+}
