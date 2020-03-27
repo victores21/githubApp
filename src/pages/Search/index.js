@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./css/search.css";
+import { Redirect, useHistory } from "react-router-dom";
 
 const Search = () => {
-  const [user, setUser] = useState([]);
-  const [query, setQuery] = useState();
+  let history = useHistory();
 
   const handleKeyPress = event => {
     if (event.key == "Enter") {
-      setQuery(event.target.value);
-      console.log(event.key);
+      history.push(event.target.value);
     }
   };
-
-  useEffect(() => {
-    const getData = async () => {
-      console.log("Query es", query);
-      if (query != undefined) {
-        const res = await fetch(`https://api.github.com/users/${query}`);
-        const data = await res.json();
-        setUser(data);
-        console.log(data);
-      }
-    };
-
-    getData();
-  }, [query]);
 
   return (
     <>
